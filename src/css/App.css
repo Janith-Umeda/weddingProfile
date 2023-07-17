@@ -1,0 +1,27 @@
+.App{
+  font-family: Alex Brush;
+  color: #dcc8b4;
+  font-size: 400%;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.hero-slide-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(130,160,150,0.3)
+}
+
+@media only screen and (max-width:768px){
+  .slide-image{
+    height: 815px;
+    object-fit: cover;
+  }
+}
