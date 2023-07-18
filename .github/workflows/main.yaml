@@ -33,5 +33,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
         port: 21
-        server-dir: 'htdocs/'
+        server-dir: 'chathuskaanddimalshi.42web.io/htdocs/'
         local-dir: build/
