@@ -1,4 +1,6 @@
 import SlideShow from './components/hearoSlideShow';
+import MusicBtn from './components/music';
+import NavigationBar from './components/navbar';
 import './css/App.css';
 
 function App() {
@@ -8,8 +10,12 @@ function App() {
   return (
     <>
       <SlideShow Images={Images}/>
-      <div className="App">
-        Welcome to the Chathuska's Wedding.
+      <MusicBtn/>
+      <div className="" id="intro">
+        <NavigationBar/>
+        <div className="App">
+          Welcome to the Chathuska's Wedding.
+        </div>
       </div>
     </>
   );

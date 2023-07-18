@@ -19,6 +19,80 @@
   background-color: rgba(130,160,150,0.3)
 }
 
+.music-btn{
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+  background: #b4d2c8;
+  border-color: #b4d2c8;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.music-btn:hover{
+  background: linear-gradient(0.2turn,#b4d2c8,#dcc8b4);
+}
+
+.music-active{
+  background: linear-gradient(0.5turn,#b4d2c8,#dcc8b4);
+  filter: drop-shadow(2mm 1mm 2mm #aeebd7);
+}
+
+.music-btn > svg{
+  display: block;
+  margin: auto;
+  font-size: 20px;
+  height: inherit;
+}
+
+.slide-image{
+  height: 891px;
+  object-fit: cover;
+}
+
+.slide-section{
+  position: relative;
+}
+
+.scroll-animation{
+  position: absolute;
+  bottom: 38px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+  flex-direction: column;
+}
+
+.scroll-anim-content{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap:5px;
+}
+
+.scroll-anim-content>span{
+  display: inline-block;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: Georgia,Times,"Times New Roman",serif;
+}
+
+.scroll-anim-content>svg{
+  font-size: 20px;
+}
+
+/* Tablets */
 @media only screen and (max-width:768px){
   .slide-image{
     height: 815px;
