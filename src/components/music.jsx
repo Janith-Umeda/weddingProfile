@@ -2,7 +2,7 @@ import {MdOutlineMusicNote, MdOutlineMusicOff} from 'react-icons/md';
 import {motion} from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-export default function MusicBtn(){
+export default function MusicBtn({musicSrc}){
 
     const [toggle,setToggle] = useState(false);
     const music = useRef();
@@ -35,7 +35,7 @@ export default function MusicBtn(){
             ):(
                 <MdOutlineMusicOff/>
             )}
-        <audio src="/music/bgmusic.mp3" loop ref={music}></audio>
+        <audio src={musicSrc} loop ref={music}></audio>
         </motion.div>
     )
 }
