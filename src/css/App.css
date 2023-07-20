@@ -195,6 +195,10 @@
   padding-top: 80px;
 }
 
+.welcome-section .welcome-heading{
+  padding: 0px 0px 25px 25px;
+}
+
 .welcome-section .welcome-heading>h2{
   text-align: center;
   font-family: "Alex Brush";
@@ -208,6 +212,40 @@
   font-size: 130%;
   text-align: center;
   font-style: italic;
+}
+
+.welcome-section .couple{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.welcome-section .couple>div>h5{
+  font-family: Georgia,Times,"Times New Roman",serif;
+  font-size: 120%;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 1em;
+  color: #888;
+}
+
+.welcome-section .footer>h4{
+  font-family: "Alex Brush";
+  font-size: 350%;
+  text-align: center;
+  color: #ddb68f;
+}
+
+.welcome-section .footer>h5{
+  color: #888888;
+  font-size: 130%;
+  font-style: italic;
+  text-align: center;
+  font-family: 'Georgia,Times,"Times New Roman",serif'
 }
 
 /* Tablets */
