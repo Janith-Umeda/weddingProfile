@@ -196,7 +196,7 @@
 }
 
 .welcome-section .welcome-heading{
-  padding: 0px 0px 25px 25px;
+  padding: 0px 0px 10px 0px;
 }
 
 .welcome-section .welcome-heading>h2{
@@ -248,6 +248,48 @@
   font-family: 'Georgia,Times,"Times New Roman",serif'
 }
 
+.timer-section{
+  background-color: #ecf2f0;
+  font-family: Georgia,Times,"Times New Roman",serif;
+}
+
+.timer-section .timer-wrap{
+  padding: 60px 0px;
+  display: block;
+  margin: auto;
+  width:0%;
+}
+
+.timer{
+  display: flex;
+  flex-direction: row;
+  gap:100px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.timer .tick{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  color:#888;
+  width:70px;
+}
+
+.timer .tick .tick-number{
+  font-size: 400%;
+  font-style: italic;
+  line-height: 1;
+}
+
+.timer .tick .tick-name{
+  font-size: 100%;
+  font-style: italic;
+  line-height: 1;
+}
+
 /* Tablets */
 @media only screen and (max-width:768px){
   .slide-image{
@@ -264,6 +306,19 @@
   .slide-image{
     height: 720px;
     object-fit: cover;
+  }
+  .welcome-section .couple{
+    flex-direction: column;
+    gap: 25px;
+  }
+  .welcome-section .welcome-heading>h2{
+    font-size: 325%;
+  }
+  .welcome-section .welcome-heading>p{
+    font-size: 110%;
+  }
+  .welcome-section .footer>h4{
+    font-size: 315%;
   }
 }
 

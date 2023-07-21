@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
 
-export default function Welcome(){
+export default function Welcome({data}){
 
     const container = {
     hidden: { opacity: 1, },
@@ -32,32 +32,28 @@ export default function Welcome(){
                 <motion.h2
                     variants={item}
                 >
-                    Welcome to our wedding website.
+                    {data.heading}
                 </motion.h2>
                 <motion.p
                     variants={item}
                 >
-                    we can’t wait to celebrate our special day with you. 
-                    We’ve created this website as a convenient and interactive way to 
-                    share all of the important details with you in the lead up to our 
-                    wedding. Thank you for your ongoing love and support. We are so 
-                    excited to share this day with you!
+                    {data.description}
                 </motion.p>
             </motion.div>
             <motion.div
-                className="couple"
+                className="couple mt-4 mb-4"
                 initial="hidden"
                 whileInView="visible"
                 variants={container}
             >
                 <motion.div variants={item} className="text-center">
-                    <img src="/images/p1.jpg" width="260" height="260" alt="groom" />
-                    <h5>KUSAL LAKSHAN</h5>
+                    <img src={data.groom?.image} width="260" height="260" alt="groom" />
+                    <h5>{data.groom?.name}</h5>
                 </motion.div>
                 <motion.img variants={item} src="/images/andSep.png" width="160" height="100" alt="and" />
                 <motion.div variants={item} className="text-center">
-                    <img src="/images/p2.jpg" width="260" height="260" alt="bride" />
-                    <h5>SASANI JAYASINGHE</h5>
+                    <img src={data.bride?.image} width="260" height="260" alt="bride" />
+                    <h5>{data.bride?.name}</h5>
                 </motion.div>
             </motion.div>
             <motion.div 
@@ -67,7 +63,9 @@ export default function Welcome(){
                 whileInView="visible"
             >
                 <motion.h4 variants={item}>Are getting married</motion.h4>
-                <motion.h5 variants={item}>on 10 December,2022 - Hilton,Colombo</motion.h5>
+                <motion.h5 variants={item}>
+                    {`on ${data.date} - ${data.venue}`}
+                </motion.h5>
             </motion.div>
         </div>
     );
