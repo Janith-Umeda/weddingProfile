@@ -1,16 +1,23 @@
 import Carousel from 'react-bootstrap/Carousel';
-import {motion} from 'framer-motion';
+import {motion,useScroll} from 'framer-motion';
 import {TfiAngleDoubleDown} from 'react-icons/tfi';
 
 export default function SlideShow({Images}) {
+
+    const {scrollY} = useScroll();
+
   return (
     <div className='slide-section'>
         <Carousel fade>
             {Images?.map((src,i)=>{
                 return(
                     <Carousel.Item key={i} interval={5000}>
-                        <img
+                        <motion.img
                             className="d-block w-100 slide-image"
+                            style={{
+                                translateY:scrollY,
+                                transition:'0.2s easeInOut'
+                            }}
                             src={`/images/${src}`}
                             alt={src}
                         />
