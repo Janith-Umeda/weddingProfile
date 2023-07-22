@@ -19,10 +19,10 @@ export default function CountDown({time}){
         const dist = cd - new Date().getTime();
         const dobj = new Date(dist);
 
-        const d = Math.floor(dist / (1000 * 60 * 60 * 24));
-        const h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((dist % (1000 * 60)) / 1000);
+        // const d = Math.floor(dist / (1000 * 60 * 60 * 24));
+        // const h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // const m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+        // const s = Math.floor((dist % (1000 * 60)) / 1000);
 
         setMonth(dobj.getMonth());
         setDay(dobj.getDate());
