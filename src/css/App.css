@@ -290,6 +290,76 @@
   line-height: 1;
 }
 
+.gandb-section{
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+
+.gandb-section .gandb-heading{
+  padding: 0px 0px 20px 0px;
+}
+
+.gandb-section .gandb-heading>h2{
+  text-align: center;
+  font-family: "Alex Brush";
+  font-size: 380%;
+  color: #d0aa85;
+}
+
+.gandb-section .gandb-container{
+  background-color: #f6f4f2;
+}
+
+.gandb-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.gandb-container .gandb-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gandb-container .reverse{
+  flex-direction: row-reverse;
+}
+.gandb-row>div{
+  width: 50%;
+}
+.gandb-row .image>img{
+  width: 95%;
+  height: 100%;
+}
+.gandb-row .desc{
+  text-align: left;
+  padding: 0px 25px 0px 5px;
+}
+.gandb-row .desc>h4{
+  font-family: Georgia,Times,"Times New Roman",serif;
+  font-size: 120%;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #444;
+  margin-bottom: 20px;
+}
+.gandb-row .desc > p{
+  font-family: Georgia,Times,"Times New Roman",serif;
+  color: #888;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.gandb-row .desc > p > div {
+  height: 20px !important;
+  font-size: 13px !important;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
 /* Tablets */
 @media only screen and (max-width:768px){
   .slide-image{
@@ -298,6 +368,25 @@
   }
   .Navbar .nav-content .wrapper .mobile-toggle{
     display: flex;
+  }
+  .timer .tick{
+    gap: 8px;
+    width: 25px;
+  }
+  .timer .tick .tick-number{
+    font-size: 270%;
+  }
+  .timer .tick .tick-name{
+    font-size: 95%;
+  }
+  .gandb-container .gandb-row{
+    flex-direction: column;
+  }
+  .gandb-row>div {
+    width: 75%;
+  }
+  .gandb-row .desc {
+    padding: 25px 25px 0px 0px;
   }
 }
 
@@ -320,6 +409,22 @@
   .welcome-section .footer>h4{
     font-size: 315%;
   }
+  .timer-section .timer-wrap{
+    padding: 45px 0px;
+  }
+  .timer{
+    gap: 25px;
+  }
+  .timer .tick{
+    gap: 7px;
+    width: 35px;
+  }
+  .timer .tick .tick-number{
+    font-size: 180%;
+  }
+  .timer .tick .tick-name{
+    font-size: 70%;
+  }
 }
 
 /* Laptop 1024 */
@@ -327,5 +432,7 @@
   .Navbar .nav-content .wrapper .links .links-item{
     font-size: 13px;
   }
-
+  .gandb-row .image>img {
+    width: 98%;
+}
 }

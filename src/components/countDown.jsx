@@ -1,66 +1,78 @@
-import { useState } from "react"
+import { useEffect, useState } from "react";
+import moment from 'moment';
+import {motion} from 'framer-motion';
 
 export default function CountDown({time}){
 
-    time = 'Jul 21, 2023 23:45:00';
-    const [month,setMonth] = useState();
-    const [day,setDay] = useState();
-    const [hours,setHours] = useState();
-    const [minute,setMinute] = useState();
-    const [sec,setSec] = useState();
+    const targetTime = moment(time? time :'2023-09-30T00:00:00');
+    const [currentTime,setCurrTime] = useState();
+    const timeDis = moment.duration(targetTime.diff(currentTime));
 
-    const cd = new Date(time).getTime();
+    const container = {
+        hidden: { opacity: 1, },
+        visible: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.1,
+                staggerChildren: 0.1
+            }
+        }
+    };
+    
+        const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        }
+    };
 
     function resolz(t){
         return t < 10 ? `0${t}` : t;
     }
 
-    const tick = setInterval(()=>{
-        const dist = cd - new Date().getTime();
-        const dobj = new Date(dist);
-
-        // const d = Math.floor(dist / (1000 * 60 * 60 * 24));
-        // const h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        // const m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-        // const s = Math.floor((dist % (1000 * 60)) / 1000);
-
-        setMonth(dobj.getMonth());
-        setDay(dobj.getDate());
-        setHours(dobj.getHours());
-        setMinute(dobj.getMinutes());
-        setSec(dobj.getSeconds());
-
-        if(dist < 0){
-            clearInterval(tick);
-        }
-
-    },1000);
+    useEffect(()=>{
+        
+        const tick = setInterval(()=>{
+            if(timeDis.seconds() >= -1){
+                setCurrTime(moment());
+            }
+        },1000);
+        return ()=>{clearInterval(tick);}
+    },[timeDis])
 
     return (
         <div className="timer-section mt-5 mb-5">
-            <div className="timer-wrap">
-                <div className="timer">
-                    <div className="tick">
-                        <span className="tick-number">{resolz(month)}</span>
+            <div className="timer-wrap" 
+                style={{opacity:timeDis.seconds() < 0 ? 0 : 1}}
+            >
+                <motion.div 
+                    className="timer"
+                    initial="hidden"
+                    variants={container}
+                    whileInView="visible"
+                >
+                    <motion.div className="tick" variants={item}>
+                        <span className="tick-number">{resolz(timeDis.months())}</span>
                         <span className="tick-name">months</span>
-                    </div>
-                    <div className="tick">
-                        <span className="tick-number">{resolz(day)}</span>
+                    </motion.div>
+                    <motion.div className="tick" variants={item}>
+                        <span className="tick-number">{resolz(timeDis.days())}</span>
                         <span className="tick-name">days</span>
-                    </div>
-                    <div className="tick">
-                        <span className="tick-number">{resolz(hours)}</span>
+                    </motion.div>
+                    <motion.div className="tick" variants={item}>
+                        <span className="tick-number">{resolz(timeDis.hours())}</span>
                         <span className="tick-name">hours</span>
-                    </div>
-                    <div className="tick">
-                        <span className="tick-number">{resolz(minute)}</span>
+                    </motion.div>
+                    <motion.div className="tick" variants={item}>
+                        <span className="tick-number">{resolz(timeDis.minutes())}</span>
                         <span className="tick-name">minutes</span>
-                    </div>
-                    <div className="tick">
-                        <span className="tick-number">{resolz(sec)}</span>
+                    </motion.div>
+                    <motion.div className="tick" variants={item}>
+                        <span className="tick-number">{resolz(timeDis.seconds() < 0? 0 : timeDis.seconds())}</span>
                         <span className="tick-name">seconds</span>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </div>
     )

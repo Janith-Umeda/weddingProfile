@@ -20,6 +20,7 @@ export default function SlideShow({Images}) {
                             }}
                             src={`/images/${src}`}
                             alt={src}
+                            loading='lazy'
                         />
                         <div className="hero-slide-overlay"></div>
                     </Carousel.Item>
