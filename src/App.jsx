@@ -4,6 +4,7 @@ import SlideShow from './components/hearoSlideShow';
 import MusicBtn from './components/music';
 import NavigationBar from './components/navbar';
 import Welcome from './components/welcome';
+import WhenWhere from './components/whenWhere';
 import './css/App.css';
 
 function App() {
@@ -55,6 +56,46 @@ function App() {
             things that brought us together. I really can’t wait to spend the rest of my life with him.`
     }
   };
+  const whenWhereData = {
+    regCards:[
+      {
+        image:'/images/reg.jpg',
+        title:'Registration',
+        desc:'We will be hosting an intimate registration for immediate family.',
+        venue:'Saturday, 10 December, 2022 — 4.40 PM — Hilton Colombo.'
+      },
+      {
+        image:'/images/poruwa.jpg',
+        title:'Poruwa Ceremony',
+        desc:`Poruwa - Saying our pledges to each other, promised to stay and work it 
+              through, not just today but forever! Please be there at 5.30 Pm to share 
+              this sacrament moment of our wedding.`,
+        venue:'Saturday, 10 December, 2022 — 5.45 PM — Hilton Colombo.'
+      }
+    ],
+    partyDesc:[
+      {
+        heading:'Poruwa Ceremony and Traditional Vows',
+        subheading:'We invite you to be with us as we begin our new life together and will be united in the traditional poruwa ceremony'
+      },
+      {
+        heading:'First dance',
+        subheading:'The bride and groom will perform their first dance!'
+      },
+      {
+        heading:'Dinner',
+        subheading:'Enjoy our international buffet with a range of hot and cold desserts! Oh! Don’t forget to try our amazing wedding cake….'
+      },
+      {
+        heading:'Going away Ceremony',
+        subheading:'We welcome you to be with us for our joyful going away ceremony.'
+      },
+      {
+        heading:'Entertainment',
+        subheading:'Don’t forget to bring your dancing shoes! Can’t wait to see you there.'
+      }
+    ]
+  }
 
   return (
     <>
@@ -69,6 +110,7 @@ function App() {
         <div className="container">
           <GroomAndBride data={groomAndBride}/>
         </div>
+        <WhenWhere data={whenWhereData}/>
       </div>
     </>
   );
