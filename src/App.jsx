@@ -29,7 +29,7 @@ function App() {
     date:'10 December,2022',
     venue:'Hilton.Colombo'
   }
-  const DeadLine = '2023-07-22T21:14:00';
+  const DeadLine = '2023-09-25T09:45:00';
   const groomAndBride = {
     groom:{
       name:'Kusal Lakshan',
