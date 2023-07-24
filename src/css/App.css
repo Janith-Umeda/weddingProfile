@@ -352,7 +352,7 @@
   font-size: 14px;
   line-height: 1.85;
 }
-.gandb-row .desc > p > div {
+.gandb-row .desc > p > span {
   height: 20px !important;
   font-size: 13px !important;
   color: #0d6efd;
@@ -432,6 +432,69 @@
   padding: 0;
 }
 
+.map-container{
+  height: 250px;
+}
+
+.map-container .map-heading{
+  text-align: center;
+  font-family: "Alex Brush";
+  font-size: 400%;
+  color: #c89b6e;
+}
+
+.map-container .map-desc{
+  font-family: Georgia,Times,"Times New Roman",serif;
+  color: #888888;
+  font-size: 130%;
+  text-align: center;
+  font-style: italic;
+}
+
+.map-container .map-responsive{
+  position: relative;
+}
+
+.map-container .loader{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.rsvp-form{
+  margin-top: 365px;
+}
+
+.rsvp-form .rsvp-heading>h2{
+  text-align: center;
+  font-family: "Alex Brush";
+  font-size: 400%;
+  color: #c89b6e;
+}
+
+.rsvp-form .rsvp-heading>p{
+  font-family: Georgia,Times,"Times New Roman",serif;
+  color: #888888;
+  font-size: 130%;
+  text-align: center;
+  font-style: italic;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.rsvp-form .rsvp-container{
+  width: 100%;
+  height: 800px;
+}
+
+.rsvp-container .rsvp-bg-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Tablets */
 @media only screen and (max-width:768px){
   .slide-image{
@@ -459,6 +522,9 @@
   }
   .gandb-row .desc {
     padding: 25px 25px 0px 0px;
+  }
+  .rsvp-form{
+    margin-top: 390px;
   }
 }
 
@@ -503,6 +569,13 @@
   .where-section .party-desc>ul{
     margin: 0 0 0.5em 3em;
     padding: 10px;
+  }
+  .rsvp-form .rsvp-heading>p,
+  .map-container .map-desc{
+    font-size: 105%;
+  }
+  .rsvp-form{
+    margin-top: 375px;
   }
 }
 

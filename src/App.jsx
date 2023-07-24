@@ -1,8 +1,10 @@
 import CountDown from './components/countDown';
 import GroomAndBride from './components/groomandbride';
 import SlideShow from './components/hearoSlideShow';
+import Map from './components/map';
 import MusicBtn from './components/music';
 import NavigationBar from './components/navbar';
+import RSVPForm from './components/rsvpForm';
 import Welcome from './components/welcome';
 import WhenWhere from './components/whenWhere';
 import './css/App.css';
@@ -96,6 +98,7 @@ function App() {
       }
     ]
   }
+  const Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.64848754701!2d79.84474019999999!3d6.932549700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259132e85493d%3A0x9d5e04ea64814a8!2sHilton%20Colombo!5e0!3m2!1sen!2ssg!4v1690216950715!5m2!1sen!2ssg";
 
   return (
     <>
@@ -111,6 +114,10 @@ function App() {
           <GroomAndBride data={groomAndBride}/>
         </div>
         <WhenWhere data={whenWhereData}/>
+        <div className="container">
+          <Map location={Location}/>
+        </div>
+        <RSVPForm />
       </div>
     </>
   );

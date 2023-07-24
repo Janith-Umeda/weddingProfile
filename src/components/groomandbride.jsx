@@ -56,9 +56,9 @@ export default function GroomAndBride({data}){
                                     String(data.groom.about).substring(0,50)+'...'
                                 )
                             }
-                            <div onClick={()=>setRM1(!readme1)}>
-                                { readme1 ? 'Read Less' : 'Read More' }
-                            </div>
+                            <span onClick={()=>setRM1(!readme1)}>
+                                { readme1 ? ' Read Less' : ' Read More' }
+                            </span>
                         </p>
                     </motion.div>
                 </motion.div>
@@ -82,9 +82,9 @@ export default function GroomAndBride({data}){
                                     String(data.bride.about).substring(0,50)+'...'
                                 )
                             }
-                            <div onClick={()=>setRM2(!readme2)} >
-                                { readme2 ? 'Read Less' : 'Read More' }
-                            </div>
+                            <span onClick={()=>setRM2(!readme2)} >
+                                { readme2 ? ' Read Less' : ' Read More' }
+                            </span>
                         </p>
                     </motion.div>
                 </motion.div>
